@@ -1,11 +1,11 @@
 import React from "react"
-import { css, StyleSheet } from "aphrodite/no-important"
-import { getStyles } from "./getStyles"
 import { defaultConfig } from "./configs"
 
 const Block = (props) => {
-  const classes = StyleSheet.create(getStyles(props))
-  return <h1 className={css(classes.example)}>{props.text}</h1>
+  const { utils, text } = props
+  const { isRendering } = utils
+
+  return <h1>{`utils.isRendering is ${isRendering}`}</h1>
 }
 
 Block.defaultProps = defaultConfig
